@@ -20,13 +20,16 @@ item_date = data['timeline']['rows']
 item_data = data['timeline']['rows']
 item_data
 item_list = []
-for i in item_data:
-    b= i['data']
-    b['date'] = i['date']
-    item_list.append(b)
-df = pd.DataFrame(item_list)
-df = df.sort_values('date', ascending=True)
-if os.path.exists("item_data.csv"):
-    df.to_csv("item_data.csv", mode='a', header=False, index=False, encoding='CP949')
-else:   
-    df.to_csv("item_data.csv", mode='a', header=True, index=False, encoding='CP949')
+try:
+    for i in item_data:
+        b= i['data']
+        b['date'] = i['date']
+        item_list.append(b)
+    df = pd.DataFrame(item_list)
+    df = df.sort_values('date', ascending=True)
+    if os.path.exists("item_data.csv"):
+        df.to_csv("item_data.csv", mode='a', header=False, index=False, encoding='CP949')
+    else:   
+        df.to_csv("item_data.csv", mode='a', header=True, index=False, encoding='CP949')
+except:
+    pass
