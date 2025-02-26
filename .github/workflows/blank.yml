@@ -1,12 +1,9 @@
-name: Fetch Seoul Weather Data
+name: DUNF ITEM LOG
 
 on:
   schedule:
     - cron: "0 0 * * *"  # 00:00마다 실행
   workflow_dispatch:  # 수동 실행 가능
-  push:
-    branches:
-      - main
 
 jobs:
   fetch_weather:
@@ -26,7 +23,7 @@ jobs:
       - name: 필요한 패키지 설치
         run: pip install requests pandas
 
-      - name: 날씨 데이터 가져오기
+      - name: 아이템 데이터 가져오기
         env:
           DNF_API_KEY: ${{ secrets.DNF_API_KEY }}
         run: python dnf.py
@@ -36,5 +33,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions@github.com"
           git add item_data.csv
-          git commit -m "itemdata weather data (auto)"
+          git commit -m "itemdata (auto)"
           git push
