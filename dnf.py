@@ -6,7 +6,7 @@ import os
 API_KEY = os.getenv("DNF_API_KEY")
 kor_last_time = datetime.now() - timedelta(hours=16) #1일 전 코드
 kor_last_time = kor_last_time.strftime("%Y%m%dT%H%M%S")
-kor_time = datetime.now() +timedelta(hour=8)
+kor_time = datetime.now() +timedelta(hours=8)
 kor_time = kor_time.strftime("%Y%m%dT%H%M%S")
 params = {
     "code" : "505",
