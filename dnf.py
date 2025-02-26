@@ -10,7 +10,7 @@ kor_time = datetime.now()
 kor_time = kor_time.strftime("%Y%m%dT%H%M%S")
 params = {
     "code" : "505",
-    "apikey" : api_key,
+    "apikey" : API_KEY,
     "limit" : 100,
     "startDate" : kor_last_time,
     "endDate" : kor_time
