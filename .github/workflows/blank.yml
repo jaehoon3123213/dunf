@@ -35,6 +35,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions@github.com"
-          git add item_dat.csv
+          git add item_data.csv
           git commit -m "itemdata weather data (auto)"
           git push
