@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import json
 import pandas as pd
 import os
-api_key = os.getenv("DNF_API_KEY")
+API_KEY = os.getenv("DNF_API_KEY")
 kor_last_time = datetime.now() - timedelta(days=1) #1일 전 코드
 kor_last_time = kor_last_time.strftime("%Y%m%dT%H%M%S")
 kor_time = datetime.now()
